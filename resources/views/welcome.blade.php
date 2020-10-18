@@ -87,7 +87,7 @@
                 <div class="links">
                     <a href="{{route('blog')}}">Blog</a>
                     <a href="{{route('transfer_p')}}">Transfer</a>
-                    <a href="{{route('authors')}}">Authors</a>
+                    <a href="{{route('author')}}">Authors</a>
                     <a href="{{route('create_post')}}">Create Post</a>
                    
                 </div>
