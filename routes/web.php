@@ -25,4 +25,19 @@ Route::get('/statement', 'HomeController@statement')->name('statement');
 
 Route::get('/enter_transaction', 'TransactionController@enter_transaction')->name('enter');
 
-Route::post('/post_transaction', 'TransactionController@post_transaction')->name('post_trans');
+Route::post('/post_transaction', 'TransactionController@transact')->name('post_trans');
+
+Route::get('/transfer', 'TransactionController@transfer_p')->name('transfer_p');
+
+Route::post('/transfer', 'TransactionController@transfer')->name('transfer');
+
+Route::get('/blog', 'BlogController@blog')->name('blog');
+
+Route::get('/create_post', 'BlogController@index')->name('post_page');
+
+Route::post('/like', 'BlogController@like')->name('like');
+
+Route::post('/create_postx', 'BlogController@create')->name('create_postx');
+
+Route::get('/single_post/{slug}', 'BlogController@single_post')->name('single_post');
+

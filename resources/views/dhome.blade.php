@@ -1,13 +1,14 @@
-@extends('layouts.layout2')
+@extends('layouts.app')
 
 
-@section('my_content')
+@section('content')
 
 
 <div>
-    <h1>Welcome to d home</h1>
+    <h1 class="display-4">Welcome to ViCoins</h1>
+    <h4>{{Auth::user()->account_no}}</h4>
 
-    <h2>Welcome, </h2>
+    <h2>Welcome, {{Auth::user()->name}}</h2>
 
 
     <div class="col-md-9">

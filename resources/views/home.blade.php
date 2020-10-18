@@ -8,17 +8,32 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (Session::has('message'))
+                    @if (Session::has('success'))
                         <div class="alert alert-success" role="alert">
-                            {{ Session::get('message') }}
+                            {{ Session::get('success') }}
                         </div>
                     @endif
+
+                    @if (Session::has('warning'))
+                        <div class="alert alert-warning" role="alert">
+                            {{ Session::get('warning') }}
+                        </div>
+                    @endif
+
+                   
 
                     @auth()
 
                     {{ $message ?? '' }}
 
-                    <h1>Your current Balance is : NGN {{$balance}}</h1>
+                    <h1> Current Balance:
+                    <?php
+
+                        echo 'NGN ' .number_format($balance, $decimal=2);
+                        ?>
+                    </h1>
+
+
 
                         <a class="btn btn-primary btn-sm" href="{{ route('enter')}}">Record Transaction</a>
                         <br>

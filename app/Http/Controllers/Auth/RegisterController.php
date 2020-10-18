@@ -64,9 +64,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $regCode = "VICOINS-2020-" .rand(111,999);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'account_no' => $regCode,
             'password' => Hash::make($data['password']),
         ]);
     }
