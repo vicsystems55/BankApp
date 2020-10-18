@@ -33,9 +33,15 @@ Route::post('/transfer', 'TransactionController@transfer')->name('transfer');
 
 Route::get('/blog', 'BlogController@blog')->name('blog');
 
+Route::get('/authors', 'BlogController@authors')->name('author');
+
+Route::get('/single_autor/{id}', 'BlogController@single_author')->name('single_author');
+
 Route::get('/create_post', 'BlogController@index')->name('post_page');
 
 Route::post('/like', 'BlogController@like')->name('like');
+
+Route::post('/follow', 'BlogController@follow')->name('follow');
 
 Route::post('/create_postx', 'BlogController@create')->name('create_postx');
 

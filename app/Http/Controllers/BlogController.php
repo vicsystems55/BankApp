@@ -10,6 +10,8 @@ use App\User;
 
 use App\Like;
 
+use App\Follower;
+
 use DB;
 
 use Auth;
@@ -20,6 +22,49 @@ class BlogController extends Controller
     {
             # code...
             return view('create_post');
+    }
+
+    public function authors()
+    {
+            # code...
+
+            $user_data = User::all();
+
+            return view('authors',[
+                'user_data' => $user_data
+            ]);
+    }
+
+    public function single_author($id)
+    {
+            # code...
+            $user_data = User::find($id);
+
+            $follower_data = DB::table('followers')->where('author_id', $id)->get();
+
+           
+
+            return view('single_author',[
+                'user_data' => $user_data,
+                'follower_data' => $follower_data
+            ]);
+    }
+
+    public function follow(Request $request)
+    {
+        # code...
+        $user_id = Auth::user()->id;
+
+        $follow_data = new Follower;
+
+        $follow_data->author_id = $request->author_id;
+        $follow_data->user_id = $user_id;
+        $follow_data->save();
+
+        $user_data = DB::table('users')->where('id', $request->author_id)->increment('followers', 1);
+
+
+        return back()->with('message', 'following recorded');
     }
 
     public function create(Request $request)
