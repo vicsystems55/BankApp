@@ -41,7 +41,7 @@
                                                     <input type="hidden" name="author_id" value="{{$user_data->id}}">
                                                     
                                                 </div>
-                                                <button type="submit" class="btn btn-secondary mb-2 shadow" disabled>Following {{$user_data->followers}} </button>
+                                                <button type="submit" class="btn btn-warning mb-2 shadow" disabled>Following {{$user_data->followers}} </button>
                                                 
                                                 </form>
 
@@ -54,7 +54,7 @@
                                                     <input type="hidden" name="author_id" value="{{$user_data->id}}">
                                                     
                                                 </div>
-                                                <button type="submit" class="btn btn-primary mb-2 shadow">Following {{$user_data->followers}} </button>
+                                                <button type="submit" class="btn btn-warning mb-2 shadow">Following {{$user_data->followers}} </button>
                                                 
                                                 </form>
 
