@@ -9,7 +9,7 @@
 
                 <div class="card-body table-responsive">
 
-                {{ $transactions->links() }}
+                
                     
 
                     <table class="table">
@@ -27,7 +27,7 @@
 
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{ $transaction->users()->name}}</td>
+                                    <td>{{ $transaction->user_id}}</td>
                                     <td>{{ $transaction->type}}</td>
                                     <td>{{ $transaction->amount}}</td>
                                     <td>{{ $transaction->balance}}</td>
