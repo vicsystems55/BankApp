@@ -30,7 +30,7 @@ class HomeController extends Controller
 
         $trans = Transaction::all();
 
-        dd($trans);
+      
         return view('statement',[
             'transactions' => $trans
         ]);
