@@ -28,12 +28,10 @@ class HomeController extends Controller
 
         // $all_transactions =  DB::table('transactions')->where('user_id', Auth::user()->id)->paginate(10);
 
-        $trans = Transaction::all();
+        $transactions = \App\Transaction::all();
 
       
-        return view('statement',[
-            'transactions' => $trans
-        ]);
+        return view('statement', compact('transactions'));
     }
 
     /**

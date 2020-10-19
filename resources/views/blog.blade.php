@@ -26,6 +26,8 @@
 
                                         {{$post->body}}
 
+                                   
+
 
 
                                     </div>
@@ -59,7 +61,7 @@
 
                                             @endif
 
-                            
+                            <a href="{{route('single_author', $post->users->id)}}"> <h6>{{$post->users->name}}</h6> </a>
                                     </div>
                                 </div>
                             </div>

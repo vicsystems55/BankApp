@@ -24,7 +24,7 @@
 
                                     <div class="card-body table-responsive">
 
-                                    <img class="rounded-circle img-thumbnail" src="/avatars/{{$data->avatar}}" alt="">
+                                    <img class="rounded-circle img-thumbnail" src="{{ asset('/avatars') }}/{{$data->avatar}}" alt="">
 
                                         <h1>{{$data->name}}</h1>
 

@@ -27,7 +27,7 @@
 
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{ $transaction->user_id}}</td>
+                                    <td>{{ $transaction->users->name}}</td>
                                     <td>{{ $transaction->type}}</td>
                                     <td>{{ $transaction->amount}}</td>
                                     <td>{{ $transaction->balance}}</td>
