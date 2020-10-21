@@ -47,3 +47,16 @@ Route::post('/create_postx', 'BlogController@create')->name('create_postx');
 
 Route::get('/single_post/{slug}', 'BlogController@single_post')->name('single_post');
 
+
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+   
+    \Mail::to('your_receiver_email@gmail.com')->send(new \App\Mail\BankAlert($details));
+   
+    dd("Email is Sent.");
+});
+

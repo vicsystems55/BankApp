@@ -18,6 +18,17 @@ use Auth;
 
 class BlogController extends Controller
 {
+    public function all()
+    {
+        $blog = Blog::all();
+        
+        return response()->json([
+            "message" => "student record created",
+            'user' => $blog
+        ], 201);
+    }
+
+
     public function index()
     {
             # code...

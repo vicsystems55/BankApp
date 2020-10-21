@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('account_no')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            
             $table->double('balance')->default('0');
             $table->integer('followers')->default('0');
             $table->string('status')->default('active');

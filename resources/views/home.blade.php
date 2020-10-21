@@ -24,6 +24,9 @@
 
                     @auth()
 
+                    <h4>Account Code: {{Auth::user()->account_no}}</h4>
+                    
+
                     {{ $message ?? '' }}
 
                     <h1> Current Balance:
@@ -34,10 +37,14 @@
                     </h1>
 
 
-
+                        <div class="p-1">
                         <a class="btn btn-primary btn-sm" href="{{ route('enter')}}">Record Transaction</a>
-                        <br>
+                        </div>
+                        
+                        <div class="p-1">
                         <a class="btn btn-warning btn-sm" href="{{ route('statement')}}">Statement of Account</a>
+                        </div>
+                        
 
 
                     @endauth
@@ -47,6 +54,56 @@
                     @endguest
 
                     {{ __('You are logged in!') }}
+                </div>
+
+                <div class="card-body table-responsive">
+
+                <h4 class="font-weight-bold">Upline: {{$upliner->referral}}</h4>
+                   
+                   <h4>Total Direct Bonus Points: {{$db_points}}</h4>
+                   
+
+                   <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                S/N
+                            </th>
+                            <th>
+                                Referree
+                            </th>
+                            <th>
+                                Points
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                        </tr>
+                    </thead>
+
+                        <tbody>
+                           @foreach($db_data as $data)
+
+                           <tr>
+                                <td>
+                                {{$loop->iteration}}
+                                </td>
+                                <td>
+                                {{$data->referree}}
+                                </td>
+                                <td>
+                                {{$data->points}}
+                                </td>
+                                <td>
+                                {{$data->created_at}}
+                                </td>
+                            </tr>
+
+
+                           @endforeach
+                        </tbody>
+                   </table>
+                   
                 </div>
             </div>
         </div>

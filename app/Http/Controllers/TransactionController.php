@@ -23,7 +23,7 @@ class TransactionController extends Controller
     {
         # code...
 
-        $user_data = DB::table('users')->get();
+        $user_data = User::where('id', '!=', auth()->id())->get();
 
         return view('transfer',[
             'user_data' => $user_data

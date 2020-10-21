@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\DirectBonus;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -49,11 +51,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'sponsors_id' => ['exists:users,account_no'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+
     }
 
     /**
@@ -64,12 +70,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $regCode = "VICOINS-2020-" .rand(111,999);
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'account_no' => $regCode,
-            'password' => Hash::make($data['password']),
-        ]);
+        
+            $user_data = DB::table('users')->get();
+
+      
+                # code...
+                # code...
+                $regCode = "VICOINS-2020-" .rand(111,999);
+
+                $user = User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'account_no' => $regCode,
+                    'password' => Hash::make($data['password']),
+                ]);
+
+                
+        
+                $db = DirectBonus::create([
+                    'referree' => $regCode,
+                    'referral' => $data['sponsors_id'],
+                    'points' => 1200,
+                    
+                ]);
+
+                return $user;
+
+           
+
+       
     }
 }

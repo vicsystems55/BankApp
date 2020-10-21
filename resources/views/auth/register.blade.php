@@ -8,6 +8,11 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                @if(Session::has('message'))
+                <div class="alert alert-danger" role="alert">
+                {{Session::get('message')}}
+                </div>
+                @endif
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -22,8 +27,8 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                </div>
                             </div>
-                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -32,6 +37,20 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sponsors_id" class="col-md-4 col-form-label text-md-right">{{ __('Sponsors_id') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sponsors_id" type="text" class="form-control @error('sponsors_id') is-invalid @enderror" name="sponsors_id"  required>
+
+                                @error('sponsors_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

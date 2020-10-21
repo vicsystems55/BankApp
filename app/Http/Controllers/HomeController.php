@@ -10,6 +10,8 @@ use Auth;
 
 use App\Transaction;
 
+use App\DirectBonus;
+
 class HomeController extends Controller
 {
     /**
@@ -25,10 +27,11 @@ class HomeController extends Controller
 
     public function statement()
     {
+        $user_id = Auth::user()->id;
 
         // $all_transactions =  DB::table('transactions')->where('user_id', Auth::user()->id)->paginate(10);
 
-        $transactions = \App\Transaction::all();
+        $transactions = \App\Transaction::where('user_id', $user_id )->get();
 
       
         return view('statement', compact('transactions'));
@@ -48,10 +51,22 @@ class HomeController extends Controller
 
         $total_balance = $trans->sum('amount');
 
+        $db_data = new DirectBonus;
+        
+        $db_data = DB::table('direct_bonuses')->where('referral', Auth::user()->account_no)->get();
+
+        $db_points = $db_data->sum('points');
+
+        $upliner = DB::table('direct_bonuses')->where('referree', Auth::user()->account_no)->first();
+    
+      
        
 
         return view('/home',[
-            'balance' => $total_balance
+            'balance' => $total_balance,
+            'db_data' => $db_data,
+            'upliner' => $upliner,
+            'db_points' => $db_points
         ]);
     }
 }

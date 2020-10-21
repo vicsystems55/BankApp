@@ -33,7 +33,7 @@
 
                 @foreach($user_data as $data)
 
-                    <option value="{{$data->account_no}}">{{$data->account_no}}</option>
+                    <option value="{{$data->account_no}}">{{$data->account_no}} [{{$data->name}}]</option>
                 @endforeach
                     <option value=""></option>
                 </select>
