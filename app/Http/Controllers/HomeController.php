@@ -47,6 +47,8 @@ class HomeController extends Controller
 
         $trans = new Transaction;
 
+        $user_data = DB::table('users')->get();
+
         $trans = DB::table('transactions')->where('user_id', Auth::user()->id)->get();
 
         $total_balance = $trans->sum('amount');
@@ -66,6 +68,7 @@ class HomeController extends Controller
             'balance' => $total_balance,
             'db_data' => $db_data,
             'upliner' => $upliner,
+            'user_data' => $user_data,
             'db_points' => $db_points
         ]);
     }

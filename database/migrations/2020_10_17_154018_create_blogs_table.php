@@ -19,6 +19,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->string('slug')->nullable();
             $table->text('body');
+            $table->string('featured_img')->default('featured_img');
             $table->integer('views')->default(0);
             $table->integer('likes')->default(0);
             $table->integer('unlikes')->default(0);

@@ -23,9 +23,7 @@
                                     <div class="card-header">{{ $post->title}}</div>
 
                                     <div class="card-body table-responsive">
-
-                                        {{$post->body}}
-
+                                    {!!$post->body !!}
                                    
 
 

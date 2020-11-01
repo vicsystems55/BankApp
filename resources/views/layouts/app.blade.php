@@ -16,8 +16,15 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    
+
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.tiny.cloud/1/7f5u2126ztjxneb3apwu1msn6y9tyllcygtp1qfkz7h1cw13/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    
 </head>
 <body>
     <div id="app">
@@ -76,5 +83,16 @@
             @yield('content')
         </main>
     </div>
+    <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+  </script>
+   
 </body>
 </html>

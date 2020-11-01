@@ -28,6 +28,25 @@ class BlogController extends Controller
         ], 201);
     }
 
+    public function all2()
+    {
+        $blog = Blog::all();
+        
+        return view('blog',[
+            'blog' => $blog
+        ]);
+    }
+
+    public function single_post($id)
+    {
+        $post = Blog::with('users')->find($id);
+        
+        return response()->json([
+            "message" => "single post",
+            'post' => $post
+        ], 201);
+    }
+
 
     public function index()
     {
@@ -102,14 +121,12 @@ class BlogController extends Controller
     {
         # code...
         $user_id = Auth::user()->id;
-        $blogs = Blog::all();
+        $blogs = Blog::with('users')->get();
         $likes = DB::table('likes')->where('user_id', Auth::user()->id)->get();
 
         // $likeArr=array_reduce($likes->toArray());
 
-      
-
-       
+     
 
         return view('blog',[
             'blogs' => $blogs,
@@ -129,5 +146,35 @@ class BlogController extends Controller
         ]);
         return back()->with('likes_message' , 'like recorded');
     }
+
+    public function apilike(Request $request)
+    {
+        # code...
+        $liked_post = DB::table('blogs')->where('id', $request->post_id)->increment('likes', 1);
+
+        Like::create([
+            'user_id' => '2',
+            'post_id' => $request->post_id
+        ]);
+        return response()->json([
+            "message" => "post liked",
+            'post' => $liked_post
+        ], 201);
+    }
+
+    public function api_author($id)
+    {
+        # code...
+        $user_data = User::find($id);
+
+        $follower_data = DB::table('followers')->where('author_id', $id)->get();
+
+        return response()->json([
+            "author" => "author received",
+            'author' => $user_data
+        ], 201);
+    }
+
+    
 
 }

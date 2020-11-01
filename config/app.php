@@ -162,6 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        KingFlamez\Rave\RaveServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -227,6 +229,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Rave' => KingFlamez\Rave\Facades\Rave::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

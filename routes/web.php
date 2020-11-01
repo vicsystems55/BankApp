@@ -60,3 +60,11 @@ Route::get('send-mail', function () {
     dd("Email is Sent.");
 });
 
+Route::post('/pay', 'RaveController@initialize')->name('pay');
+
+Route::post('/rave/callback', 'RaveController@callback')->name('callback');
+
+Route::get('auth/{provider}', 'SocialiteController@redirectToProvider');
+
+Route::get('auth/{provider}/callback', 'SocialiteController@handleProviderCallback');
+

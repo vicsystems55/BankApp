@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    protected $guarded = [];  
+    
+    protected $guarded=[];
+    
+    protected $table = 'blogs';
     //
 
     public function users()

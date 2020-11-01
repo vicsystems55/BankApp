@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c9cbc3acdc6613c10ce99dd74466742",
+    "content-hash": "06ea7c1ef0efec332f862c1bf0331f07",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -812,6 +812,77 @@
             "time": "2020-09-30T07:37:11+00:00"
         },
         {
+            "name": "kingflamez/laravelrave",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kingflamez/laravelrave.git",
+                "reference": "e2b7fb0c9ce753b3bc5e2b28e1b86efc62fa1567"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kingflamez/laravelrave/zipball/e2b7fb0c9ce753b3bc5e2b28e1b86efc62fa1567",
+                "reference": "e2b7fb0c9ce753b3bc5e2b28e1b86efc62fa1567",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+                "mashape/unirest-php": "^3.0|^4.0",
+                "php": "^5.6.0|^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.3",
+                "satooshi/php-coveralls": ">0.7",
+                "scrutinizer/ocular": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KingFlamez\\Rave\\RaveServiceProvider"
+                    ],
+                    "aliases": {
+                        "Rave": "KingFlamez\\Rave\\Facades\\Rave"
+                    }
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/Rave.php"
+                ],
+                "psr-4": {
+                    "KingFlamez\\Rave\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kingflamez",
+                    "email": "flamekeed@gmail.com"
+                }
+            ],
+            "description": "A Laravel 5 Package for Flutterwave Rave",
+            "keywords": [
+                "Flutterwave Rave",
+                "flutterwave",
+                "github",
+                "kingflamez",
+                "laravel",
+                "laravel 5",
+                "open source",
+                "payments",
+                "php",
+                "rave",
+                "ravepay.co"
+            ],
+            "time": "2020-09-23T14:15:05+00:00"
+        },
+        {
             "name": "laminas/laminas-diactoros",
             "version": "2.4.1",
             "source": {
@@ -1186,6 +1257,71 @@
                 "passport"
             ],
             "time": "2020-07-27T18:34:39+00:00"
+        },
+        {
+            "name": "laravel/socialite",
+            "version": "v5.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/socialite.git",
+                "reference": "8197acf2fe5446a2800b95d250c1da72fd6051bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/8197acf2fe5446a2800b95d250c1da72fd6051bc",
+                "reference": "8197acf2fe5446a2800b95d250c1da72fd6051bc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "league/oauth1-client": "^1.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "illuminate/contracts": "^6.0|^7.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Socialite\\SocialiteServiceProvider"
+                    ],
+                    "aliases": {
+                        "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Socialite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+            "homepage": "https://laravel.com",
+            "keywords": [
+                "laravel",
+                "oauth"
+            ],
+            "time": "2020-10-21T12:45:02+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1617,6 +1753,77 @@
             "time": "2020-09-21T18:10:53+00:00"
         },
         {
+            "name": "league/oauth1-client",
+            "version": "v1.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth1-client.git",
+                "reference": "159c3d2bf27568f9af87d6c3f4bb616a251eb12b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/159c3d2bf27568f9af87d6c3f4bb616a251eb12b",
+                "reference": "159c3d2bf27568f9af87d6c3f4bb616a251eb12b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "friendsofphp/php-cs-fixer": "^2.16.1",
+                "mockery/mockery": "^1.3",
+                "phpstan/phpstan": "^0.12.42",
+                "phpunit/phpunit": "^7.5"
+            },
+            "suggest": {
+                "ext-simplexml": "For decoding XML-based responses."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev",
+                    "dev-develop": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth1\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Corlett",
+                    "email": "bencorlett@me.com",
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth 1.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "bitbucket",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth1",
+                "single sign on",
+                "trello",
+                "tumblr",
+                "twitter"
+            ],
+            "time": "2020-09-28T09:39:08+00:00"
+        },
+        {
             "name": "league/oauth2-server",
             "version": "8.1.1",
             "source": {
@@ -1698,6 +1905,52 @@
                 }
             ],
             "time": "2020-07-01T11:33:50+00:00"
+        },
+        {
+            "name": "mashape/unirest-php",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mashape/unirest-php.git",
+                "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+                "reference": "842c0f242dfaaf85f16b72e217bf7f7c19ab12cb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "0.1.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "suggest": {
+                "ext-json": "Allows using JSON Bodies for sending and parsing requests"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Unirest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Unirest PHP",
+            "homepage": "https://github.com/Mashape/unirest-php",
+            "keywords": [
+                "client",
+                "curl",
+                "http",
+                "https",
+                "rest"
+            ],
+            "time": "2016-08-11T17:49:21+00:00"
         },
         {
             "name": "monolog/monolog",

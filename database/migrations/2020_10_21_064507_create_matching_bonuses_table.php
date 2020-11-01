@@ -15,6 +15,11 @@ class CreateMatchingBonusesTable extends Migration
     {
         Schema::create('matching_bonuses', function (Blueprint $table) {
             $table->id();
+            $table->string('main');
+            $table->string('left_leg')->nullable();
+            $table->string('right_leg')->nullable();
+            $table->integer('points')->default();
+            
             $table->timestamps();
         });
     }

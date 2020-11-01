@@ -15,15 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('login', 'Api\AuthController@login');
+
 Route::post('register', 'Api\AuthController@register');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('user-detail', 'Api\AuthController@userDetail');
 });
 
 Route::get('all', 'BlogController@all');
+
+Route::post('like_post', 'BlogController@apilike');
+
+Route::get('single_post/{id}', 'BlogController@single_post');
+
+Route::get('author/{id}', 'BlogController@api_author');
