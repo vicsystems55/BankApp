@@ -13,6 +13,8 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        'rave/callback'
+        'rave/callback',
+        'upload_pix',
+        
     ];
 }
