@@ -45,7 +45,11 @@ class AuthController extends Controller
       $success['token'] =  $user->createToken('MyApp')-> accessToken; 
       $success['name'] =  $user->name;
 
-      return response()->json(['success'=>$success], 200); 
+      return response()->json([
+        'success'=>$success,
+        'error' => $validator->errors
+      
+      ], 200); 
     }
 
     public function userDetail()

@@ -28,6 +28,10 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 Route::get('all', 'BlogController@all');
 
+Route::post('upload_pix', 'Api\PostController@store');
+
+Route::get('say_greeting', 'Api\PostController@index');
+
 Route::post('like_post', 'BlogController@apilike');
 
 Route::get('single_post/{id}', 'BlogController@single_post');
