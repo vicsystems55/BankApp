@@ -16,7 +16,7 @@ class VerifyCsrfToken extends Middleware
         'rave/callback',
         'upload_pix/*',
         'api/upload_pix/',
-        'api/uplaoad_pis/*'
+        'api/uplaoad_pix/*'
         
     ];
 }
